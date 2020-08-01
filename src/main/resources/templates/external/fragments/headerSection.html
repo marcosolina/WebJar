@@ -1,0 +1,46 @@
+<div th:fragment="headerSection" th:remove="tag"
+th:with="appName=${T(com.marco.webjar.MarcoWebJarUtils).APP_NAME}"
+>
+<!--
+****************************************************************************
+  Begin Fragment: Header Section
+****************************************************************************
+-->
+<div class="mia-section-header">
+	<nav class="mia-nav-bar" id="nav_bar">
+		<div class="mia-nav-bar-left-container">
+			<span class="mia-nav-bar-element">
+                <div layout:fragment="custom-header-left">
+                    <!--
+                        If you want to put custom stuff here, add 
+                        in your page something like this:
+                        <div layout:fragment="custom-header-left" th:remove="tag">
+                            bla bla bla
+                        </div>
+                    -->
+                </div>
+			</span>
+		</div>
+		<div class="mia-nav-bar-right-container">
+			<span class="mia-nav-bar-element">
+				<div layout:fragment="custom-header-right">
+                    <!--
+                        If you want to put custom stuff here, add 
+                        in your page something like this:
+                        <div layout:fragment="custom-header-right" th:remove="tag">
+                            bla bla bla
+                        </div>
+                    -->
+                </div>
+			</span>
+		</div>
+	</nav>
+</div>
+
+
+<!--
+****************************************************************************
+  End Fragment: Header Section
+****************************************************************************
+-->
+</div>

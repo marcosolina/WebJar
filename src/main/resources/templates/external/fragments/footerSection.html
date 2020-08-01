@@ -1,0 +1,38 @@
+<div th:fragment="footerSection" th:remove="tag" 
+th:with="appName=${T(com.marco.webjar.MarcoWebJarUtils).APP_NAME}"
+>
+<!--
+****************************************************************************
+  Begin Fragment: Footer Bar
+****************************************************************************
+-->
+
+<div class="mia-section-footer">
+	<nav class="mia-footer-bar" id="footer_bar">
+		<div class="mia-footer-bar-left-container">
+			<div layout:fragment="custom-footer-left">
+                <!--
+                    If you want to put custom stuff here, add 
+                    in your page something like this:
+                    <div layout:fragment="custom-footer-left" th:remove="tag">
+                        bla bla bla
+                    </div>
+                -->
+            </div>
+		</div>
+		<div class="mia-footer-bar-right-container height-100">
+			<span>v</span>
+			<span th:text="${T(com.marco.webjar.MarcoWebJarUtils).APP_VERSION}">version</span>
+			<span>b</span>
+			<span th:text="${T(com.marco.webjar.MarcoWebJarUtils).APP_BUILD}">build</span>
+			<img id="footerLogo" class="mia-footer-bar-element height-100" th:src="'/' + ${appName} + '/webjars/img/work-in-progress.png'"/>
+		</div>
+	</nav>
+</div>
+
+<!--
+****************************************************************************
+  End Fragment: Footer Bar
+****************************************************************************
+-->
+</div>

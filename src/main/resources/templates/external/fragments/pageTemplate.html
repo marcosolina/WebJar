@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{external/fragments/pageLayout.html}">
+<!-- 
+###############################################################
+INFORMATION
+This is a page template to use as example
+
+PUT all your view under /WEB-INF/view
+
+###############################################################
+
+-->
+<body>
+	<div layout:fragment="custom-header" th:remove="tag" th:with="appName=${T(com.marco.webjar.MarcoWebJarUtils).APP_NAME}">
+		<!-- 
+			Here is where you can define the things that 
+			you want in the header tag of this page. 
+			You can define internal "stuff" or import it
+			
+			(This Test.js must be in your WebApp resource folder)
+		 -->
+	
+	
+		<script th:src="'/' + ${appName} + '/resources/js/Test.js'"></script>
+		<script th:inline="javascript">
+		/*<![CDATA[*/
+
+		$(document).ready(function(){
+			$("button").click(Test.showNotification);
+		});
+		
+		/*]]>*/
+		</script>
+		<style>
+			.cell-border{
+				border: 1px solid #a9a9a9;
+			}
+		</style>
+	</div>
+
+
+	<div layout:fragment="page-content">
+	
+		<!-- START Content of your page -->
+	
+		<!-- This is the content of your page, do what you want here, like in this example code -->
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-3 cell-border">
+					One
+				</div>
+				<div class="col-sm-6 col-md-3 cell-border">
+					Two
+				</div>
+				<div class="col-sm-6 col-md-3 cell-border">
+					Three
+				</div>
+				<div class="col-sm-6 col-md-3 cell-border">
+					Four
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm cell-border">
+					<input type="text" class="form-control form-control-sm" placeholder="Type something">
+				</div>
+				<div class="col-sm cell-border">
+					<button type="button" class="btn btn-outline-info btn-sm">Click Me</button>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!-- END Content of your page -->
+	</div>
+</body>
+</html>

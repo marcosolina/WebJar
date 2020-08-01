@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html 
+xmlns:th="http://www.thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+lang="en">
+<head>
+	<div th:replace="external/fragments/commonHeadTags.html :: commonHead"></div>
+	<div layout:fragment="custom-header"></div>
+</head>
+
+<body>
+	<div class="mia-page-container">
+		<div th:replace="external/fragments/headerSection.html::headerSection"></div>
+<!--
+****************************************************************************
+  Begin Page Content
+****************************************************************************
+-->
+		<div class="mia-section-body" layout:fragment="page-content">
+		<!-- 
+		
+			PUT HERE THE CODE FOR YOUR PAGE
+		
+		 -->
+			<p>Page content goes here</p>
+		</div>
+<!--
+****************************************************************************
+  End Page Content
+****************************************************************************
+-->
+		<div th:replace="external/fragments/footerSection.html::footerSection"></div>
+	</div>
+</body>
+</html>

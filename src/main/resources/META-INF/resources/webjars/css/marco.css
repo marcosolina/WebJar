@@ -1,0 +1,148 @@
+*:disabled {
+	cursor: not-allowed !important;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.height-100 {
+	height: 100%;
+}
+
+.color-red {
+	color: #FF0000;
+}
+
+.display-none {
+	display: none !important;
+}
+
+.center-content-vertically {
+	display: flex;
+	align-items: center;
+}
+
+/**********************************
+ START Header section
+**********************************/
+.mia-section-header {
+	height: 50px;
+}
+
+.mia-nav-bar {
+	/*
+	background-color: #170b29;
+	color: #FFFFFF;
+	*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 10px;
+	height: 100%;
+}
+
+.mia-nav-bar-left-container {
+	
+}
+
+.mia-nav-bar-right-container {
+	
+}
+
+.mia-nav-bar-element {
+	
+}
+
+/**********************************
+ END Header section
+**********************************/
+
+/**********************************
+ START Footer section
+**********************************/
+.mia-section-footer {
+	/*
+	background-color: #170b29;
+	color: #FFFFFF;
+	*/
+	height: 40px;
+}
+
+.mia-footer-bar {
+	height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.mia-footer-bar-left-container {
+	
+}
+
+.mia-footer-bar-right-container {
+	
+}
+
+.mia-footer-bar-element {
+	
+}
+
+/**********************************
+ END Footer section
+**********************************/
+
+/**********************************
+ START PAGE Layout
+**********************************/
+.mia-page-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.mia-section-body {
+	/*
+	background-color: #170b29;
+	color: #FFFFFF;
+	*/
+	height: calc(100% - 90px);
+	overflow-y: auto;
+}
+/**********************************
+ END PAGE Layout
+**********************************/
+
+/**********************************************************
+  START OVERRIDE Libraries
+**********************************************************/
+.alert-danger, .alert-success, .alert-info, .alert-warning {
+	color: #FFFFFF;
+	border: 0;
+}
+
+.ui-pnotify-title {
+	font-size: 1.2rem;
+}
+
+.tooltip {
+	pointer-events: none;
+}
+
+.ui-pnotify-text {
+	max-height: 500px;
+	overflow-y: auto;
+}
+
+/**********************************************************
+  END OVERRIDE Libraries
+**********************************************************/

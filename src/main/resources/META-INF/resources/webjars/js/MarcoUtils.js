@@ -143,19 +143,10 @@ var MarcoUtils = ((function(MarcoUtils){
 		
 		if(parameters.showErrors === undefined)
 			parameters.showErrors = true;
-
-		if(parameters.dataToPost === undefined){
-			parameters.dataToPost = {};
-		}
 		
-		
-		$.ajax({
-			type:"POST",
+		var ajaxConfig = {
+			type: parameters.type == undefined ? "POST" : parameters.type,
 			url: parameters.url,
-			data:JSON.stringify(parameters.dataToPost),
-			contentType: parameters.contentType == undefined ? "application/json" : parameters.contentType,
-			dataType: "json",
-			processData: parameters.processData == undefined ? true : parameters.processData,
 			cache: false,
 			async: parameters.async == undefined ? true : parameters.async, 
 			success: function(resp){
@@ -204,7 +195,17 @@ var MarcoUtils = ((function(MarcoUtils){
 				}
 				deferred.reject(resp);
 			},
-		});
+		};
+		
+		if(parameters.body){
+			ajaxConfig.data = JSON.stringify(parameters.body);
+			ajaxConfig.contentType= "application/json";
+			ajaxConfig.dataType= "json";
+			ajaxConfig.processData= parameters.processData == undefined ? true : parameters.processData;
+		}
+		
+		
+		$.ajax(ajaxConfig);
 		
 		return deferred.promise();
 	}

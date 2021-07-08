@@ -163,7 +163,7 @@ var MarcoUtils = ((function(MarcoUtils){
 									title: error.title, 
 									message: error.message, 
 									close: error.close, 
-									type: __NOTIFY_TYPE[error.type]
+									type: error.type
 								});
 							});
 						}

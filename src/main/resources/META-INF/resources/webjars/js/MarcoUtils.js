@@ -158,14 +158,7 @@ var MarcoUtils = ((function(MarcoUtils){
 						deferred.resolve(resp);
 					}else{
 						if(parameters.showErrors){
-							$.each(resp.errors, function(index, error){
-								MarcoUtils.showNotification({
-									title: error.title, 
-									message: error.message, 
-									close: error.close, 
-									type: error.type
-								});
-							});
+							MarcoUtils.displayArrayOfNotifications(resp.errors);
 						}
 						deferred.reject(resp);
 					}
@@ -176,7 +169,9 @@ var MarcoUtils = ((function(MarcoUtils){
 					MarcoUtils.preventClick(false);
 				}
 				if(parameters.hideErrors != true){
-					if(resp.responseJSON && resp.responseJSON.errors){
+					if(Array.isArray(resp.errors)){
+						MarcoUtils.displayArrayOfNotifications(resp.errors);
+					} else if(resp.responseJSON && resp.responseJSON.errors){
 						$.each(resp.responseJSON.errors, function(index, error){
 							MarcoUtils.showNotification({
 								title: error.title, 
@@ -210,6 +205,17 @@ var MarcoUtils = ((function(MarcoUtils){
 		return deferred.promise();
 	}
 	
+	
+	MarcoUtils.displayArrayOfNotifications = function(notifications){
+		$.each(notifications, function(index, notification){
+			MarcoUtils.showNotification({
+				title: notification.title, 
+				message: notification.message, 
+				close: notification.close, 
+				type: notification.type
+			});
+		});
+	}
 	
 	MarcoUtils.initializeTooltips = function(){
 		$('[data-toggle="tooltip"]').tooltip("dispose");
